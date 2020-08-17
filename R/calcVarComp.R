@@ -1,4 +1,10 @@
+#' Calculate variance components.
+#'
+#' This is an internal function for CalcGTheoryCI
+#' @param x Internal input
+#' @importFrom stats aggregate
 #' @export
+
 calcVarComp <- function(x) {
   ## Calculate 2-facet variance components via ANOVA from 'long' data Get sample sizes
   np <- nlevels(x$p)

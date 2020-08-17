@@ -4,18 +4,28 @@
 \alias{CalcGTheoryCI}
 \title{Compute confidence intervals for G-theory quantities}
 \usage{
-CalcGTheoryCI(Data, B = 1000, type)
+CalcGTheoryCI(
+  Data = NULL,
+  B = 1000,
+  type = c("p", "i", "o", "pi", "po", "io", "pio")
+)
 }
 \arguments{
 \item{Data}{Data in long format in the following order: person, facet1, facet2, score}
 
 \item{B}{Number of bootstrap iterations}
 
-\item{type}{Type of bootstrap sampling scheme as desribed in Tong & Brennan (2004)}
+\item{type}{Type of bootstrap sampling scheme as described in Tong & Brennan (2004)}
 }
 \value{
 A matrix of bootstrap values which is then given to the summaryCI() function
 }
 \description{
 This function computes and stores the raw bootstrap samples for G-theory variance components and coefficients.
+}
+\examples{
+\dontrun{
+data("Brennan.3.1")
+CalcGTheoryCI(Data = Brennan.3.1, B = 1000, type = "pi")
+}
 }
