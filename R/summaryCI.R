@@ -21,11 +21,10 @@ summaryCI <- function(.result = NULL, ConfLevel = .8, rounding = 4) {
   # GstudyEstimates (means and standard error)
   means <- colMeans(.result)
   sds <- apply(.result, 2, sd)
-  gstudy_est <- round(rbind(c(means[1:7], sds[1:7])), rounding)
-  colnames(gstudy_est) <- c("p_Var", "i_Var", "o_Var", "pi_Var", "po_Var",
-                            "io_Var", "ResidVar", "p_Var_SE", "i_Var_SE", "o_Var_SE", "pi_Var_SE",
-                            "po_Var_SE", "io_Var_SE", "ResidVar_SE")
-  rownames(gstudy_est) <- c("value")
+  gstudy_est <- round(as.data.frame(cbind(means[1:7], sds[1:7])), rounding)
+  rownames(gstudy_est) <- c("p_Var", "i_Var", "o_Var", "pi_Var", "po_Var",
+                            "io_Var", "ResidVar")
+  colnames(gstudy_est) <- c("Mean", "S.E.")
   # CIs
   lb_g <- round(apply(.result, 2, quantile, probs = (1 - ConfLevel)/2, names = F), rounding)
   ub_g <- round(apply(.result, 2, quantile, probs = (1 - (1 - ConfLevel)/2), names = F), rounding)
