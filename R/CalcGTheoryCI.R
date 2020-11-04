@@ -1,4 +1,4 @@
-#' Compute confidence intervals for G-theory quantities
+#' Compute confidence intervals for G-theory quantities for the crossed model
 #'
 #' This function computes and stores the raw bootstrap samples for G-theory variance components and coefficients.
 #' @param Data Data in long format in the following order: person, facet1, facet2, score

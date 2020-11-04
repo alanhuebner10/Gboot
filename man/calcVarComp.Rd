@@ -2,13 +2,22 @@
 % Please edit documentation in R/calcVarComp.R
 \name{calcVarComp}
 \alias{calcVarComp}
-\title{Calculate variance components.}
+\title{Calculate crossed variance components.}
 \usage{
-calcVarComp(x)
+calcVarComp(Data = NULL)
 }
 \arguments{
-\item{x}{Internal input}
+\item{Data}{Data in long format in the following order: person, facet1, facet2, score}
+}
+\value{
+A list of variance components
 }
 \description{
-This is an internal function for CalcGTheoryCI
+This function computes 2-facet crossed variance components using ANOVA.
+}
+\examples{
+\dontrun{
+data("Brennan.3.1")
+calcVarComp(Data = Brennan.3.1)
+}
 }
