@@ -24,3 +24,5 @@ Imports:
     doParallel,
     foreach,
     iterators
+Suggests: 
+    testthat
