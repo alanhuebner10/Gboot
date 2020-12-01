@@ -15,13 +15,13 @@
 #' @return A data frame in long format with columns Person, Facet 1, Facet 2, and simulated Scores
 #' @examples
 #' \dontrun{
-#' #Generate a single data set with sample sizes and parameters as in Table 3 of Tong and Brennan (2006)
+#' #Generate a single data set with sample sizes and parameters as in Table 3 of Tong and Brennan (2004)
 #' sim_dat_2crossed(np = 100, ni = 20, nr = 2,
 #'                  sig_p = 4, sig_i =  2, sig_r = 1,
 #'                  sig_pi = 8, sig_pr = sqrt(2), sig_ir = sqrt(3), sig_pir = 12)
 #'
 #' }
-#' @references Tong, Y., & Brennan, R. L. (2006). Bootstrap techniques for estimating variability in generalizability theory. (Report No. 15).  Center for Advanced Studies in Measurement and Assessment, University of Iowa.
+#' @references Tong, Y., & Brennan, R. L. (2004). Bootstrap techniques for estimating variability in generalizability theory. (Report No. 15).  Center for Advanced Studies in Measurement and Assessment, University of Iowa.
 #' @export
 sim_dat_2crossed <- function(np, ni, nr, sig_p, sig_i, sig_r,
                                       sig_pi, sig_pr, sig_ir, sig_pir) {
