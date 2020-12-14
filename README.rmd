@@ -1,0 +1,56 @@
+---
+always_allow_html: true
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, 
+                      comment = "")
+```
+
+## R Package for Generalizability Theory
+
+The Gboot package implements bootstrap sampling schemes as described in Tong & Brennan (2004). Two functions, `CalcGTheoryCI` and `CalcGTheoryCINested` produce bootstrapped confidence intervals for crossed and nested designs, respectively. Each function can implement any combination of person, item, and observer (what Tong & Brennan call person, item, rater). 
+
+Within Gboot, you can also simulate data for crossed or nested designs with `sim_dat_2crossed` and `sim_dat_2nested`. 
+
+## Installation
+
+As of now, Gboot is only on GitHub. You can install it with the following:
+
+```{r, eval = FALSE}
+remotes::install_github("alanhuebner10/Gboot")
+```
+
+
+## Core Functions and Workflow
+
+Producing bootstrapped confidence intervals for a *p x i* crossed design can be done as follows:
+
+```{r}
+library(Gboot)
+
+data("Brennan.3.1")
+
+bootstrappedCI <- CalcGTheoryCI(Data = Brennan.3.1, B = 1000, type = "pi")
+
+summaryCI(bootstrappedCI)
+
+bootViz(bootstrappedCI)
+```
+
+Or with simulated data:
+
+```{r}
+simData <- sim_dat_2crossed(np = 100, ni = 20, nr = 2,
+                            sig_p = 4, sig_i =  2, sig_r = 1,
+                            sig_pi = 8, sig_pr = sqrt(2), sig_ir = sqrt(3), 
+                            sig_pir = 12)
+
+simulatedBootstrappedCI <- CalcGTheoryCI(Data = simData, B = 1000, type = "pi")
+
+summaryCI(simulatedBootstrappedCI)
+
+bootViz(simulatedBootstrappedCI)
+```
+

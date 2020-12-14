@@ -22,6 +22,7 @@
 #'
 #' }
 #' @references Tong, Y., & Brennan, R. L. (2004). Bootstrap techniques for estimating variability in generalizability theory. (Report No. 15).  Center for Advanced Studies in Measurement and Assessment, University of Iowa.
+#' @importFrom stats rnorm
 #' @export
 sim_dat_2crossed <- function(np, ni, nr, sig_p, sig_i, sig_r,
                                       sig_pi, sig_pr, sig_ir, sig_pir) {
