@@ -37,29 +37,27 @@ summaryCI(bootstrappedCI)
 
     $Gstudy_Estimates
                Mean   S.E.
-    p_Var    0.5870 0.5498
-    i_Var    0.4183 0.6073
-    o_Var    0.0119 0.2432
-    pi_Var   0.5635 0.4903
-    po_Var   0.1082 0.4115
-    io_Var   0.1621 0.2954
-    ResidVar 0.9296 0.4156
+    p_Var    0.5468 0.5325
+    i_Var    0.4404 0.6337
+    o_Var    0.0031 0.2242
+    pi_Var   0.5882 0.5113
+    po_Var   0.1102 0.3874
+    io_Var   0.1530 0.2841
+    ResidVar 0.9162 0.4138
     
     $Gstudy_Intervals
-       p_Var               i_Var              o_Var              
-    CI "(-0.0928, 1.3167)" "(-0.2294, 1.206)" "(-0.2081, 0.3023)"
-       pi_Var              po_Var              io_Var             
-    CI "(-0.0145, 1.2059)" "(-0.3147, 0.6354)" "(-0.1034, 0.5383)"
-       ResidVar          
-    CI "(0.4216, 1.4976)"
+       p_Var              i_Var              o_Var              
+    CI "(-0.1338, 1.235)" "(-0.207, 1.3465)" "(-0.1963, 0.2571)"
+       pi_Var              po_Var              io_Var             ResidVar         
+    CI "(-0.0335, 1.2654)" "(-0.3194, 0.6176)" "(-0.105, 0.4938)" "(0.4032, 1.465)"
     
     $Dstudy_Estimates
           AbsErrVar GenCoef DepCoef AbsErrVar_SE GenCoef_SE DepCoef_SE
-    value     0.442  0.8516  0.4415       0.3312    10.6024     2.0742
+    value    0.4474  0.9152  0.4814        0.323     7.2952     3.1284
     
     $Dstudy_Intervals
        AbsErrVar_SE       GenCoef_SE          DepCoef_SE         
-    CI "(0.0778, 0.8792)" "(-0.0536, 0.9535)" "(-0.1543, 0.9224)"
+    CI "(0.0846, 0.8903)" "(-0.1268, 0.9585)" "(-0.2309, 0.9193)"
 
 ``` r
 bootViz(bootstrappedCI)
@@ -82,32 +80,38 @@ summaryCI(simulatedBootstrappedCI)
 
     $Gstudy_Estimates
                  Mean   S.E.
-    p_Var     18.2754 5.3897
-    i_Var      2.1027 2.2445
-    o_Var     -0.1559 0.5640
-    pi_Var    56.5959 7.6776
-    po_Var     0.8240 3.7022
-    io_Var     2.5123 2.0514
-    ResidVar 141.7370 8.3971
+    p_Var     21.2289 5.6989
+    i_Var      2.1320 2.6999
+    o_Var      0.3037 1.0269
+    pi_Var    69.0688 8.4590
+    po_Var     2.3896 3.8166
+    io_Var     2.5178 2.0322
+    ResidVar 145.3173 8.2719
     
     $Gstudy_Intervals
-       p_Var               i_Var               o_Var             
-    CI "(11.5899, 25.529)" "(-0.4985, 4.9002)" "(-0.654, 0.5136)"
-       pi_Var               po_Var              io_Var            
-    CI "(47.1751, 66.0684)" "(-3.5986, 5.5269)" "(0.1377, 5.1799)"
-       ResidVar            
-    CI "(130.59, 152.1074)"
+       p_Var                i_Var               o_Var              
+    CI "(14.3835, 28.9508)" "(-1.0411, 5.5829)" "(-0.6277, 1.7862)"
+       pi_Var             po_Var              io_Var             
+    CI "(58.573, 80.026)" "(-2.0964, 7.5804)" "(-0.0223, 5.1866)"
+       ResidVar             
+    CI "(134.876, 155.4345)"
     
     $Dstudy_Estimates
           AbsErrVar GenCoef DepCoef AbsErrVar_SE GenCoef_SE DepCoef_SE
-    value    6.8752  0.7203  0.7177       1.8253     0.0812     0.0819
+    value    8.6026  0.7106  0.7029       1.8948     0.0819     0.0812
     
     $Dstudy_Intervals
-       AbsErrVar_SE       GenCoef_SE         DepCoef_SE        
-    CI "(4.6717, 9.2751)" "(0.6188, 0.8139)" "(0.6177, 0.8135)"
+       AbsErrVar_SE        GenCoef_SE         DepCoef_SE        
+    CI "(6.3512, 11.1382)" "(0.6063, 0.8042)" "(0.6027, 0.7952)"
 
 ``` r
 bootViz(simulatedBootstrappedCI)
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+You can also use our shiny app to explore simulated results:
+
+``` r
+runShinySimulation()
+```

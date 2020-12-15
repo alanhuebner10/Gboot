@@ -31,7 +31,8 @@ This function generates simulated data for the two-facet nested design.
 }
 \examples{
 \dontrun{
-#Generate a single data set with sample sizes and parameters as in Table 1 of Tong and Brennan (2004),
+#Generate a single data set with sample sizes and parameters as in Table 1 of
+Tong and Brennan (2004),
 # i.e. 100 subjects taking 40 items total, with 20 items nested within each rater.
 sim_dat_2nested(np = 100, ni = 20, nr = 2,
                  sig_p = 4, sig_r = 1,
@@ -40,5 +41,7 @@ sim_dat_2nested(np = 100, ni = 20, nr = 2,
 }
 }
 \references{
-Tong, Y., & Brennan, R. L. (2004). Bootstrap techniques for estimating variability in generalizability theory. (Report No. 15).  Center for Advanced Studies in Measurement and Assessment, University of Iowa.
+Tong, Y., & Brennan, R. L. (2004). Bootstrap techniques for
+estimating variability in generalizability theory. (Report No. 15).
+Center for Advanced Studies in Measurement and Assessment, University of Iowa.
 }

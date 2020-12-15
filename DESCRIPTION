@@ -23,6 +23,7 @@ Imports:
     ggplot2,
     doParallel,
     foreach,
-    iterators
+    iterators, 
+    shiny
 Suggests: 
     testthat

@@ -54,3 +54,9 @@ summaryCI(simulatedBootstrappedCI)
 bootViz(simulatedBootstrappedCI)
 ```
 
+You can also use our shiny app to explore simulated results:
+
+```{r, eval = FALSE}
+runShinySimulation()
+```
+
