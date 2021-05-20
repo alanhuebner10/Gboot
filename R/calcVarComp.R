@@ -1,4 +1,4 @@
-#' Calculate crossed variance components.
+#' Calculate variance components.
 #'
 #' This function computes 2-facet crossed variance components using ANOVA.
 #' @param Data Data in long format in the following order: person, facet1, facet2, score
