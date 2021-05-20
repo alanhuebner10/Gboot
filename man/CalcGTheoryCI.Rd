@@ -2,7 +2,7 @@
 % Please edit documentation in R/CalcGTheoryCI.R
 \name{CalcGTheoryCI}
 \alias{CalcGTheoryCI}
-\title{Compute confidence intervals for G-theory quantities for the crossed model}
+\title{Compute confidence intervals for G-theory quantities}
 \usage{
 CalcGTheoryCI(
   Data = NULL,

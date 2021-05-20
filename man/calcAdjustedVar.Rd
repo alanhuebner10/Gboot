@@ -2,7 +2,7 @@
 % Please edit documentation in R/calcAdjustedVar.R
 \name{calcAdjustedVar}
 \alias{calcAdjustedVar}
-\title{Calculate adjusted variance components for the crossed model.}
+\title{Calculate adjusted variance components.}
 \usage{
 calcAdjustedVar(
   .data,

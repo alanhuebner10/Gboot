@@ -1,4 +1,4 @@
-#' Calculate adjusted variance components for the crossed model.
+#' Calculate adjusted variance components.
 #'
 #' This is an internal function for CalcGTheoryCI
 #' @param .data Internal input
