@@ -18,9 +18,10 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Depends: R (>= 3.5.0)
+Depends: R (>= 4.0.0)
 Imports:
     ggplot2,
     doParallel,
     foreach,
-    iterators
+    iterators,
+    shiny
