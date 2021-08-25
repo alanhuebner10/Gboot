@@ -167,6 +167,8 @@ CalcGTheoryCI <- function(Data = NULL, B = 1000,
     result
   }
   results <- rbind(results, r)
+  colnames(results) <- c("varp","vari","varo","varpi","varpo","vario",
+                      "varpio","AbsErrVar","GenCoef","DepCoef")
   class(results) <- append(class(results), "G_out")
   return(results)
 }
