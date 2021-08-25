@@ -24,7 +24,7 @@
 #' @export
 sim_dat_2nested <- function(np, ni, nr, sig_p, sig_r, sig_pr, sig_i.r, sig_pi.r){
   #Create design matrix
-  sim_data <- construct_DesMat2_nested(np, ni, nr)
+  sim_data <- construct_DesMat_2nested(np, ni, nr)
   #Generate random effects
   Zp <- rnorm(np, 0, 1)
   Zr <- rnorm(nr, 0, 1)
@@ -35,8 +35,8 @@ sim_dat_2nested <- function(np, ni, nr, sig_p, sig_r, sig_pr, sig_i.r, sig_pi.r)
   for (p in 1:np){
     for (r in 1:nr){
       for (i in 1:ni){
-        sim_data$Score[score_index] <- sig_p*Zp[p] + sig_r*Zr[r] + sig_pr*Z[p, r]
-                                       sig_i.r*Zi.r[i, r] + sig_pi.r*rnorm(1)
+        sim_data$Score[score_index] <- sig_p*Zp[p] + sig_r*Zr[r] + sig_pr*Zpr[p, r]
+                                       sig_i.r*Zi.h[i, r] + sig_pi.r*rnorm(1)
         score_index <- score_index + 1
       }
     }
