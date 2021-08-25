@@ -39,7 +39,7 @@ summaryCI <- function(.result = NULL, ConfLevel = .8, rounding = 4) {
   # DstudyCIs
   dstudy_cis <- as.data.frame(cbind(lb_g[8:10], ub_g[8:10]))
   colnames(dstudy_cis) <- c("LowerBound", "UpperBound")
-  rownames(dstudy_cis) <- c("AbsErrVar_SE", "GenCoef_SE", "DepCoef_SE")
+  rownames(dstudy_cis) <- c("AbsErrVar", "GenCoef", "DepCoef")
   # Return four matrices in a named list
   return(list(Gstudy_Estimates = gstudy_est, Gstudy_Intervals = gstudy_cis, Dstudy_Estimates = dstudy_est,
               Dstudy_Intervals = dstudy_cis))
