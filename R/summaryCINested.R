@@ -28,19 +28,17 @@ summaryCINested <- function(.result = NULL, ConfLevel = .8, rounding = 4) {
   # CIs
   lb_g <- round(apply(.result, 2, quantile, probs = (1 - ConfLevel)/2, names = F), rounding)
   ub_g <- round(apply(.result, 2, quantile, probs = (1 - (1 - ConfLevel)/2), names = F), rounding)
-  gstudy_cis_vec <- noquote(paste0("(", lb_g, ", ", ub_g, ")"))
-  gstudy_cis <- rbind(gstudy_cis_vec[1:5])
-  colnames(gstudy_cis) <- c("p_Var", "o_Var", "po_Var", "i:o_Var", "ResidVar")
-  rownames(gstudy_cis) <- c("CI")
+  gstudy_cis <- as.data.frame(cbind(lb_g[1:5], ub_g[1:5]))
+  colnames(gstudy_cis) <- c("LowerBound", "UpperBound")
+  rownames(gstudy_cis) <- c("p_Var", "o_Var", "po_Var", "i:o_Var", "Resid_Var")
   # DstudyEstimates (mean and standard error)
-  dstudy_est <- round(rbind(c(means[6:8], sds[6:8])), rounding)
-  colnames(dstudy_est) <- c("AbsErrVar", "GenCoef", "DepCoef", "AbsErrVar_SE", "GenCoef_SE",
-                            "DepCoef_SE")
-  rownames(dstudy_est) <- c("value")
+  dstudy_est <- round(as.data.frame(cbind(means[6:8], sds[6:8])), rounding)
+  colnames(dstudy_est) <- c("Mean", "S.E.")
+  rownames(dstudy_est) <- c("AbsErrVar", "GenCoef", "DepCoef")
   # DstudyCIs
-  dstudy_cis <- rbind(gstudy_cis_vec[6:8])
-  colnames(dstudy_cis) <- c("AbsErrVar_SE", "GenCoef_SE", "DepCoef_SE")
-  rownames(dstudy_cis) <- c("CI")
+  dstudy_cis <- as.data.frame(cbind(lb_g[6:8], ub_g[6:8]))
+  colnames(dstudy_cis) <- c("LowerBound", "UpperBound")
+  rownames(dstudy_cis) <- c("AbsErrVar", "GenCoef", "DepCoef")
   # Return four matrices in a named list
   return(list(Gstudy_Estimates = gstudy_est, Gstudy_Intervals = gstudy_cis, Dstudy_Estimates = dstudy_est,
               Dstudy_Intervals = dstudy_cis))
